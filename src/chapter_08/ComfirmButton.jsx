@@ -6,10 +6,9 @@ class ComfirmButton extends Component {
     this.state = {
       isConfirmed: false
     }
-    this.handleConfirm = this.handleConfirm.bind(this)
   }
 
-  handleConfirm() {
+  handleConfirm = () => {
     this.setState(prevState => ({
       isConfirmed: !prevState.isConfirmed
     }))
