@@ -11,7 +11,7 @@ const db = mysql.createConnection({
 	host: 'leanedu23.shop',
 	port: '3309',
 	user: 'leanmath',
-	password: 'Happy1234!',
+	password: '',
 	database: 'leanmath',
 });
 
