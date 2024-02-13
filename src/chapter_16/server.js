@@ -1,19 +1,21 @@
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql');
+require('dotenv').config();
 
 const app = express();
 app.use(express.json());
-
 app.use(cors());
 
 const db = mysql.createConnection({
-	host: 'leanedu23.shop',
-	port: '3309',
-	user: 'leanmath',
-	password: '',
-	database: 'leanmath',
+	host: process.env.DB_HOST,
+	port: process.env.DB_PORT,
+	user: process.env.DB_USER,
+	password: process.env.DB_PASSWORD,
+	database: process.env.DB_DATABASE,
 });
+
+console.log(process.env);
 
 app.get('/', (req, res) => {
 	const sql = 'SELECT id, st_id, book_name, status from st_study where st_id="35"';
